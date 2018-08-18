@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0A9341D7-A39E-4991-94CC-01AE7C79BD89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - UI", "1 - UI", "{456C7653-0B57-44E7-BBDE-BE916C8DE912}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{190FE6EF-B4B6-4980-8484-9AD4CD45AF76}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infrastructure", "3 - Infrastructure", "{4DEE4B04-DA80-460D-AC16-25A63C0E1158}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivroShop.Infrastructure", "src\LivroShop.Infrastructure\LivroShop.Infrastructure.csproj", "{236A038D-FA6D-489E-ABCF-56FF1A295D62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivroShop.ApplicationCore", "src\LivroShop.ApplicationCore\LivroShop.ApplicationCore.csproj", "{6E19DE25-DFE1-41C0-838E-88EECFFC6488}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LivroShop.Web", "src\LivroShop.Web\LivroShop.Web.csproj", "{15F33A53-56F9-4378-ADA5-72A74B79C19D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{236A038D-FA6D-489E-ABCF-56FF1A295D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{236A038D-FA6D-489E-ABCF-56FF1A295D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{236A038D-FA6D-489E-ABCF-56FF1A295D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{236A038D-FA6D-489E-ABCF-56FF1A295D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E19DE25-DFE1-41C0-838E-88EECFFC6488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E19DE25-DFE1-41C0-838E-88EECFFC6488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E19DE25-DFE1-41C0-838E-88EECFFC6488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E19DE25-DFE1-41C0-838E-88EECFFC6488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15F33A53-56F9-4378-ADA5-72A74B79C19D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15F33A53-56F9-4378-ADA5-72A74B79C19D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15F33A53-56F9-4378-ADA5-72A74B79C19D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15F33A53-56F9-4378-ADA5-72A74B79C19D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{456C7653-0B57-44E7-BBDE-BE916C8DE912} = {0A9341D7-A39E-4991-94CC-01AE7C79BD89}
+		{190FE6EF-B4B6-4980-8484-9AD4CD45AF76} = {0A9341D7-A39E-4991-94CC-01AE7C79BD89}
+		{4DEE4B04-DA80-460D-AC16-25A63C0E1158} = {0A9341D7-A39E-4991-94CC-01AE7C79BD89}
+		{236A038D-FA6D-489E-ABCF-56FF1A295D62} = {4DEE4B04-DA80-460D-AC16-25A63C0E1158}
+		{6E19DE25-DFE1-41C0-838E-88EECFFC6488} = {190FE6EF-B4B6-4980-8484-9AD4CD45AF76}
+		{15F33A53-56F9-4378-ADA5-72A74B79C19D} = {456C7653-0B57-44E7-BBDE-BE916C8DE912}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E14413CA-E6CF-4E89-8240-6FD368EB5939}
+	EndGlobalSection
+EndGlobal
