@@ -2,11 +2,11 @@
 using AutoMapper;
 using LivroShop.ApplicationCore.Entities;
 using LivroShop.ApplicationCore.Intrfaces.Services;
-using LivroShop.Web.ViewModels;
+using LivroShop.Web2.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LivroShop.Web.Controllers
+namespace LivroShop.Web2.Controllers
 {
     public class LivrosController : Controller
     {

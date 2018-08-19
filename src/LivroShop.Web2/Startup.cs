@@ -1,17 +1,19 @@
-﻿using AutoMapper;
-using LivroShop.ApplicationCore.Intrfaces.Repositories;
-using LivroShop.ApplicationCore.Intrfaces.Services;
-using LivroShop.ApplicationCore.Services;
-using LivroShop.Infrastructure.Data;
-using LivroShop.Infrastructure.Repositories;
-using LivroShop.Web.AutoMapper;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using LivroShop.Web2.Services;
+using LivroShop.Infrastructure.Data;
+using AutoMapper;
+using LivroShop.Web2.AutoMapper;
+using LivroShop.ApplicationCore.Intrfaces.Services;
+using LivroShop.ApplicationCore.Intrfaces.Repositories;
+using LivroShop.ApplicationCore.Services;
+using LivroShop.Infrastructure.Repositories;
 
-namespace LivroShop.Web
+namespace LivroShop.Web2
 {
     public class Startup
     {
@@ -25,7 +27,15 @@ namespace LivroShop.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<LivroShopContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<LivroShopContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<LivroShopContext>()
+                .AddDefaultTokenProviders();
+
+            // Add application services.
+            services.AddTransient<IEmailSender, EmailSender>();
 
             Mapper.Initialize(cfg => cfg.AddProfile<AutoMapperProfile>());
 
@@ -42,6 +52,7 @@ namespace LivroShop.Web
             {
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
             else
             {
@@ -50,11 +61,13 @@ namespace LivroShop.Web
 
             app.UseStaticFiles();
 
+            app.UseAuthentication();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Livros}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
